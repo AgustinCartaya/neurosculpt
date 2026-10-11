@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the thesis below."
+title: "Brain MRI prediction from longitudinal data (Master thesis code)"
+authors:
+  - family-names: Cartaya
+    given-names: Agustín
+    affiliation: "<UNIVERSITY>"
+type: software
+repository-code: "https://github.com/AgustinCartaya/<REPO_NAME>"
+date-released: "2024-07-10"
+license: MIT
+preferred-citation:
+  type: thesis
+  thesis-type: "Master's thesis"
+  title: "<THESIS TITLE>"
+  authors:
+    - family-names: Cartaya
+      given-names: Agustín
+  institution:
+    name: "<UNIVERSITY>"
+  year: 2024

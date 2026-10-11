@@ -1,0 +1,52 @@
+# create enviroment and activate
+conda create --name s4 python=3.10
+conda deactivate
+conda activate s4
+
+# install libraries
+conda install -c conda-forge cudatoolkit=11.8
+conda install -c conda-forge cudnn
+python -m pip install tensorflow[and-cuda]
+
+
+# modify path to use coda tolkit with your intalled lybraries
+
+conda env list
+cd /cluster/home/agustinc/miniconda3/envs/s4
+
+mkdir -p ./etc/conda/activate.d
+mkdir -p ./etc/conda/deactivate.d
+
+echo "export OLD_LD_LIBRARY_PATH=\$LD_LIBRARY_PATH" > ./etc/conda/activate.d/env_vars.sh
+echo "export LD_LIBRARY_PATH=\$CONDA_PREFIX/lib:\$LD_LIBRARY_PATH" >> ./etc/conda/activate.d/env_vars.sh
+
+echo "export LD_LIBRARY_PATH=\$OLD_LD_LIBRARY_PATH" > ./etc/conda/deactivate.d/env_vars.sh
+unset OLD_LD_LIBRARY_PATH
+
+
+# test tensorflow
+python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+# necessary packages
+pip install tqdm
+pip install nibabel
+pip install opencv-python
+pip install scikit-image
+pip install scikit-learn
+pip install itk
+pip install SimpleITK
+pip install pandas
+pip install matplotlib
+pip install seaborn
+# pip install tensorflow-addons
+pip install PyWavelets
+pip install ipympl
+
+# pip install tqdm nibabel opencv-python scikit-image scikit-learn itk SimpleITK pandas matplotlib seaborn PyWavelets ipympl
+
+# pythorch
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+pip install munch
+pip install ffmpeg-python
+
+pip install munch ffmpeg-python

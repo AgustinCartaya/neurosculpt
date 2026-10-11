@@ -1,0 +1,11 @@
+# Train / validation split. Copy to configs/splits.yaml (git-ignored) and fill in.
+# Subjects = patients with both a HUNT3 and a HUNT4 scan, sorted by ID.
+# The first `n_train` subjects form the training / reference population;
+# the rest (plus `extra_validation_ids`) form the validation set.
+n_train: 621
+
+# Additional subjects placed in the validation set.
+extra_validation_ids: []
+
+# Subjects never used as reference (abnormal deformation fields after registration).
+excluded_patients: []

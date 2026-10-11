@@ -1,0 +1,25 @@
+StarGAN v2 subpackage (brainpred.methods.stargan_v2) - license notice
+=====================================================================
+
+The code in this folder (model.py, solver.py, checkpoint.py, utils.py) and the
+StarGAN v2 input fetchers in brainpred/data/stargan_2d.py are derived from the
+official StarGAN v2 implementation:
+
+    StarGAN v2
+    Copyright (c) 2020-present NAVER Corp.
+    https://github.com/clovaai/stargan-v2
+
+which is licensed under the Creative Commons Attribution-NonCommercial 4.0
+International License (CC BY-NC 4.0):
+    http://creativecommons.org/licenses/by-nc/4.0/
+
+Changes made for this project (by Agustin Cartaya): single-channel (grey-level)
+images, brain-mask guided high-pass skip connections in the generator instead of
+the facial-landmark (FAN) masks, removal of the FAN / video / metric code, and
+packaging as part of `brainpred`.
+
+Because this is an adaptation of CC BY-NC 4.0 material, THIS SUBPACKAGE (and the
+derived fetchers mentioned above) REMAINS UNDER CC BY-NC 4.0: it may be shared and
+adapted for non-commercial purposes only, with attribution to NAVER Corp. and an
+indication of the changes. The license of the rest of the `brainpred` package
+does not apply to these files.

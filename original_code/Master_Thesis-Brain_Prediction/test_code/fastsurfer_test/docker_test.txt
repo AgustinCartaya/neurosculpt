@@ -1,0 +1,15 @@
+docker run -v C:/Users/Agustin/Master/Master/S4/docker_test/data:/data /
+           -v C:/Users/Agustin/Master/Master/S4/docker_test/output:/output /
+           -v C:/Users/Agustin/Master/Master/S4/docker_test:/fs_license /
+           --rm --user root deepmi/fastsurfer:cpu-latest /
+           --fs_license /fs_license/license.txt /
+           --t1 /data/12082_1_T1_REG_SIM.nii /
+           --device cpu /
+           --sid subjectX --sd /output /
+           --parallel
+            --seg_only
+
+
+
+docker run -v C:/Users/Agustin/Master/Master/S4/docker_test/data:/data -v C:/Users/Agustin/Master/Master/S4/docker_test/output:/output -v C:/Users/Agustin/Master/Master/S4/docker_test:/fs_license --rm --user root deepmi/fastsurfer:cpu-latest --fs_license /fs_license/license.txt --t1 /data/12082_1_T1_REG_SIM.nii --device cpu --sid subjectX --sd /output --parallel --seg_only --allow_root
+docker run -v C:/Users/Agustin/Master/Master/S4/docker_test/data:/data -v C:/Users/Agustin/Master/Master/S4/docker_test/output:/output -v C:/Users/Agustin/Master/Master/S4/docker_test:/fs_license --rm --user root deepmi/fastsurfer:cpu-latest --fs_license /fs_license/license.txt --t1 /data/12082_0_T1_NSK.nii --device cpu --sid 12082_0 --sd /output --parallel --seg_only --allow_root

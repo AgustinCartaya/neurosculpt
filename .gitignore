@@ -1,0 +1,42 @@
+# Machine-specific configuration (copy the *.example.yaml files)
+configs/paths.yaml
+configs/splits.yaml
+
+# Data, results and model weights are never committed
+data/*
+!data/README.md
+results/
+checkpoints/
+work/
+*.nii
+*.nii.gz
+*.mgz
+*.lta
+*.h5
+*.ckpt
+*.pt
+*.pth
+*.npy
+*.npz
+*.zip
+*.csv
+
+# Logs
+logs/
+*.out
+*.err
+slurm-*.out
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

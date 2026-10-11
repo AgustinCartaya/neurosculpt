@@ -1,0 +1,30 @@
+# Copy this file to configs/paths.yaml (git-ignored) and adapt it to your machine.
+# Alternatively, point the BRAINPRED_CONFIG environment variable to any YAML file.
+# `~` and environment variables (e.g. $HOME, $SCRATCH) are expanded.
+
+# Longitudinal T1 data, organised as:
+#   <data_dir>/HUNT3/<patient_id>/<patient_id>_0_T1_RAW.nii
+#   <data_dir>/HUNT4/<patient_id>/<patient_id>_1_T1_RAW.nii
+# See docs/data.md for the full list of files produced by preprocessing.
+data_dir: ~/data/brainpred/HUNT
+
+# Every method writes to <results_dir>/<method_name>/{results,results_postprocessed,statistics,...}
+results_dir: ~/data/brainpred/results
+
+# Intermediate artefacts shared between methods (longitudinal elastix registrations,
+# inter-patient similarity tables, 2D slices for StarGAN v2).
+work_dir: ~/data/brainpred/work
+
+# Trained model checkpoints (one sub-folder per model).
+checkpoints_dir: ~/data/brainpred/checkpoints
+
+# MNI ICBM152 2009c nonlinear symmetric template
+# (mni_icbm152_t1_tal_nlin_sym_09c.nii and mni_icbm152_t1_tal_nlin_sym_09c_mask.nii).
+mni_template_dir: ~/data/mni_icbm152_nlin_sym_09c
+
+# Folder containing your FreeSurfer license.txt (https://surfer.nmr.mgh.harvard.edu/registration.html)
+freesurfer_license_dir: ~/freesurfer_license
+
+# Scratch space for FreeSurfer / FastSurfer
+temp_dir: /tmp/brainpred
+

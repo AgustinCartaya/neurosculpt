@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brainpred"
+version = "0.1.0"
+description = "Prediction of future brain MRI from longitudinal scans with deformation-field and generative models (master thesis code)"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Agustín Cartaya" }]
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "numpy<2",
+    "scipy",
+    "pandas",
+    "nibabel",
+    "SimpleITK",
+    "itk",
+    "itk-elastix",
+    "scikit-image",
+    "scikit-learn",
+    "opencv-python",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+    "pyyaml",
+    "ipympl",
+]
+
+[project.optional-dependencies]
+# 3D GANs (MGAN / MPGAN)
+tf = [
+    "tensorflow[and-cuda]>=2.15,<2.16",
+    "tensorflow-addons",
+    "PyWavelets",
+]
+# StarGAN v2
+torch = [
+    "torch",
+    "torchvision",
+    "munch",
+    "ffmpeg-python",
+]
+dev = ["ruff", "nbstripout"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+brainpred = ["utils/FreeSurferColorLUT.txt", "methods/stargan_v2/LICENSE"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
